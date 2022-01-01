@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #393C41;
+    color: white;
+    user-select: none;
+    animation: fade 1s linear;
+    font-weight: 200;
+}
+
+#toSmallDevice {
+    display: none;
+}
+
+/*Fade animation*/
+@keyframes fade {
+    from {
+        opacity: 0%;
+    } to {
+        opacity: 100%;
+    }
+}
+
+/* For number input */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+header {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 70px;
+    text-align: center;
+    font-weight: 200;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #212326;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 25px;
+    max-width: 75%;
+}
+
+.title {
+    font-size: 65px;
+    color: #979797;
+} 
+
+.description {
+    font-size: 30px;
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: #9797974b;
+    margin: 30px 0px 20px 0px;
+}
+
+.secretNumber {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#clickToReveal {
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+}
+
+.inputArea {
+    display: flex;
+    background-color: #131314;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inputArea .inputNumber {
+    outline: none;
+    border: 2px solid #cecece7e;
+    border-radius: 10px;
+    background-color: #393C41;
+    color: #fff;
+    width: auto;
+    max-width: 100%;
+    padding: 20px;
+    font-size: 30px;
+    transition: box-shadow ease 0.5s;
+    text-align: center;
+}
+
+.inputNumber:focus{
+    box-shadow: 0px 0px 25px 1px rgba(255, 255, 255, 0.144) ;
+}
+
+.inputButton {
+    font-size: 28px;
+    background-color: #1F8D1F;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    transition: linear 0.25s all;
+    margin: 20px 0px 0px 0px;
+    padding: 10px 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.inputButton:hover {
+    cursor: pointer;
+    background-color: green;
+    box-shadow: 0px 0px 20px 1px rgba(0, 128, 0, 0.452) ;
+}
+
+.gameScore {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.gameScoreCard {
+    background-color: #131314;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 28px;
+    text-align: center;
+    margin: 10px;
+}
+
+.mainTitleScore {
+    font-size: 36px;
+}
+
+@media only screen and (max-width: 400px) {
+    header h1 {
+        font-size: 50px !important;
+    }
+
+    .title {
+        font-size: 50px !important;
+    }
+
+    .description {
+        font-size: 30px !important;
+    }
+
+    .popupTitle {
+        font-size: 40px !important;
+    }
+
+    .popupDescription {
+        font-size: 20px !important;
+    }
+
+    .popup {
+        width: 60% !important;
+    }
+
+    .inputArea .inputNumber {
+        max-width: 75% !important;
+    }
+}
+
+@media only screen and (max-width: 260px) {
+    section {
+        display: none;
+    }
+
+    header {
+        display: none;
+    }
+
+    body {
+        background-color: #fff;
+    }
+    
+    .popup {
+        display: none !important;
+    }
+
+    #toSmallDevice {
+        display: block;
+        color: #000;
+        font-weight: bold;
+    }
+}
+
+.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #000;
+    align-items: center;
+    padding: 30px 50px;
+    border-radius: 20px;
+    z-index: 2;
+    opacity: 0;
+    transition: linear all 0.15s;
+    transform: scale(0) translate(-50%, -50%);
+}
+
+.active {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+}
+
+#bodyPopup {
+    transition: opacity linear 0.3s;
+}
+
+.popup .iconCheck {
+    margin: 5px 0px;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #34f234;
+    color: #34f234;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 60px;
+    line-height: 100px;
+}
+
+.popup .iconCancel {
+    margin: 5px 0px;
+    width: 100px;
+    height: 100px;
+    border: 4px solid red;
+    color: red;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 60px;
+    line-height: 100px;
+}
+
+
+.popupTitle {
+    font-size: 60px;
+    font-weight: 600;
+    margin: 5px 0px;
+    text-align: center;
+}
+
+.popupDescription {
+    font-size: 30px;
+    margin: 2px 0px;
+    text-align: center;
+}
+
+#clickToReveal {
+    transition: all linear 0.25s;
+}
+
+#clickToReveal:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.dismiss-btn {
+    outline: none;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 32px;
+    padding: 7.5px 20px;
+    border-radius: 10px;
+    margin: 20px 0px 0px 0px;
+    transition: ease-out all 0.3s;
+}
+
+
+.dismiss-btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    margin: 40px 0px;
+    font-size: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: all ease 0.3s;
+}
+
+footer a:hover {
+    color: #000;
+    font-size: 44px;
+}

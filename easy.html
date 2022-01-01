@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guess the number !</title>
+    <meta name="description" content="A simple guess the number game with 3 difficulty and a score !">
+
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="/maingame.css">
+    <link rel="shortcut icon" href="https://www.dr-mikes-math-games-for-kids.com/linkimgs/GuessMyNumber.png">
+    
+</head>
+
+<div id="toSmallDevice">Sorry your device is too small</div>
+
+<body id="body">
+
+    <div class="popup center" id="popup">
+        <!-- Correct -->
+        <div style="display: none;" id="iconCheck" class="iconCheck">
+            <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+
+        <!-- False -->
+        <div style="display: block;" id="iconError" class="iconCancel">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="popupTitle" id="popupTitle"></div>
+        <div class="popupDescription" id="popupDescription"></div>
+        <div id="popupBtn" class="dismiss-btn">
+            Okay !
+        </div>
+    </div>
+
+    <div id="bodyPopup">
+        <header>
+        <h1 class="mainTitle">
+            Guess the number !
+        </h1>
+        </header>
+
+        <section>
+
+        <div class="container">
+
+            <div class="explication">
+                <div id="gameDifficulty" class="title">Easy</div>
+                <div class="description">Guess a number with 3 digits in less time/try to get a high score <br><span style="color: red;font-weight: 500;">Important:</span> Numbers like <span style="font-weight: 500;">001</span> are also included </div>
+            </div>
+            
+            <div class="separator"></div>
+
+            <div class="secretNumber">Secret number : ???<div id="clickToReveal">(click here to reveal it)</div></div>
+
+            <iframe name="hiddenIframe" width="0" height="0" border="0" style="display:none" frameborder="0"></iframe>
+            <form id="formSubmit" class="inputArea" target="hiddenIframe">
+                <input type="number" min="00" max='999' id="inputField" placeholder="Type the number"  class="inputNumber">
+                <input type="submit" class="inputButton" id="tryButton" value="Try">
+            </form>
+
+            <div class="gameScore">
+                <div class="gameScoreCard">
+                    <div class="mainTitleScore">Time</div>
+                    <div class="resultScore" id="time"><span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span></div>
+                </div>
+                <div class="gameScoreCard">
+                    <div class="mainTitleScore">Tries</div>
+                    <div class="resultScore" id="tries">0</div>
+                </div>
+            </div>
+            
+
+        </div>
+
+        </section>
+
+        <footer>Made with 🤍 by <a href="https://www.instagram.com/t1r.ke/" target="_blank">Rayane</a></footer>
+
+    </div>
+
+    <script src="/minigame.js"></script>
+
+</body>
+</html>
